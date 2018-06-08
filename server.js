@@ -13,13 +13,22 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
+// Set Body Parser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+// Set Handlebars
+const exphbs = require("express-handlebars");
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
 // Database Connection
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
-mongoose.Promise = Promise;
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/news-scrape";
 mongoose.connect(MONGODB_URI);
+
+app.get("/", function(req, res) {
+    res.render("index");
+})
 
 // Scraping route
 app.get("/scrape", function(req, res) {
