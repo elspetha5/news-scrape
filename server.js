@@ -32,15 +32,15 @@ app.get("/", function(req, res) {
 
 // Scraping route
 app.get("/scrape", function(req, res) {
-    axios("https://www.goodnewsnetwork.org/category/news/").then(function(err, res, html) {
-        const $ = cheerio.load(html);
+    axios.get("https://www.goodnewsnetwork.org/category/news/").then(function(result) {
+        const $ = cheerio.load(result.data);
 
-        $(".td-model-thumb").each(function(i, element) {
-            const result = {};
+        $(".td-module-thumb").each(function(i, element) {
+            let result = {};
 
             result.title = $(this).children("a").attr("title");
             result.link = $(this).children("a").attr("href");
-            result.pic = $(this).children("img").attr("src");
+            result.pic = $(this).children("a").children("img").attr("src");
 
             db.Article.create(result).then(function(dbArticle) {
                 console.log(dbArticle);
