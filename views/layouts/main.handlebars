@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Good News Scrape</title>
-    <link rel="stylesheet" type="text/css" href="/reset.css"/>
-    <link rel="stylesheet" type="text/css" href="/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="/app.js"></script>
 </head>
+
 <body>
-    <div id="navbar">
-        <span class="navButton"><i class="far fa-newspaper"></i> Good News</span>
-        <span class="navButton"><i class="far fa-file-alt"></i> Saved Articles</span>
-        <span class="navButton"><i class="fas fa-random"></i> Scrape New Articles</span>
-    </div>
 
-    <div id="header">
-
+    <div id="jumbotron">
+        <h1>Good News Scrape</h1>
+        <h2>Stories for the News-Weary Soul</h2>
     </div>
 
     {{{ body }}}
-    
+
+
+    <div id="navbar">
+        <a href="/" class="navButton">
+            <i class="far fa-newspaper"></i> Good News</a>
+{{!--         <a href="/saved" class="navButton">
+            <i class="far fa-file-alt"></i> Saved Articles</a>
+        <a href="/scrape" class="navButton"> --}}
+            <i class="fas fa-random"></i> Scrape New Articles</a>
+    </div>
 </body>
+
 </html>
