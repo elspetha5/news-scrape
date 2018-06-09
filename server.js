@@ -97,6 +97,9 @@ app.post("/articles/:id", function (req, res) {
         });
 });
 
+
+// Don't quite know what's not working with the saved article feature...
+// I tried to implement it, but couldn't get it to do what it's supposed to
 app.get("/saved", function (req, res) {
 
     db.Article.find({ "saved": true }).then(function (dbArticle) {
